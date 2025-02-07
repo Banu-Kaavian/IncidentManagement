@@ -51,15 +51,14 @@ annotate service.Incidents with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : customer.name,
-            Label : '{i18n>Customer}',
-        },
-        {
-            $Type : 'UI.DataField',
-            
             Value : status.descr,
             Label : '{i18n>Status}',
             Criticality : status.criticality,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : customer.name,
+            Label : '{i18n>Customer}',
         },
         {
             $Type : 'UI.DataField',
@@ -82,12 +81,7 @@ annotate service.Incidents with @(
             $Type : 'UI.DataField',
             Value : customer.name,
         },
-        TypeImageUrl : 'sap-icon://alert',
-    },
-    UI.FieldGroup #Details : {
-        $Type : 'UI.FieldGroupType',
-        Data : [
-        ],
+        TypeImageUrl : 'sapicon://alert',
     },
     UI.FieldGroup #i18nDetails : {
         $Type : 'UI.FieldGroupType',
@@ -124,7 +118,6 @@ annotate service.Incidents with {
                     ValueListProperty : 'email',
                 },
             ],
-            Label : 'Customers',
         },
         Common.Text : {
             $value : customer.name,
@@ -138,29 +131,22 @@ annotate service.Incidents with {
     status @(
         Common.Label : '{i18n>Status}',
         Common.ValueListWithFixedValues : true,
-        Common.Text : {
-            $value : status.descr,
-            ![@UI.TextArrangement] : #TextOnly
-        },
+        Common.Text : status.descr,
     )
 };
 
 annotate service.Incidents with {
     urgency @(
         Common.Label : '{i18n>Urgency}',
-        Common.Text : {
-            $value : urgency.descr,
-            ![@UI.TextArrangement] : #TextOnly
-        },
         Common.ValueListWithFixedValues : true,
     )
 };
 
-annotate service.Status with {
+annotate service.Urgency with {
     code @Common.Text : descr
 };
 
-annotate service.Urgency with {
+annotate service.Status with {
     code @Common.Text : descr
 };
 

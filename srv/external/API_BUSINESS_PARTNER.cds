@@ -5,7 +5,7 @@
 @sap.supported.formats : 'atom json xlsx'
 service API_BUSINESS_PARTNER {};
 
-@cds.external : true
+@cds.external : true 
 @cds.persistence.skip : true
 @sap.content.version : '1'
 @sap.label : 'Email Address'

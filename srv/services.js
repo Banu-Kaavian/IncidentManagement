@@ -45,7 +45,11 @@ class ProcessorService extends cds.ApplicationService {
     }
     return result;
   }
-  
+  async onCustomerRead(req) {
+    console.log('🔍 Received Query:', req.query);
+    console.log('🔍 Query Options:', req._queryOptions);
+}
+
 
   //Custom Handler
   async onCustomerRead(req) {

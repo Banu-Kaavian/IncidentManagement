@@ -42,6 +42,7 @@ class ProcessorService extends cds.ApplicationService {
         delete customer.name;
         await UPSERT.into(Customers).entries(customer);
       }
+      console.log(result)
     }
     return result;
   }
@@ -71,6 +72,7 @@ class ProcessorService extends cds.ApplicationService {
       name: bp.name,
       email: bp.addresses[0]?.email[0]?.email
     }));
+    
   
     // Explicitly set $count so the values show up in the value help in the UI
     result.$count = 1000;
